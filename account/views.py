@@ -110,10 +110,10 @@ class BookDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookDetailSerializer
 
-class BookOrderList(generics.GenericAPIView):
-    # renderer_classes = [UserRenderer]
-    permission_classes=[IsAuthenticated]
-    def get(self,request):
-        return Response(BookOrder.objects.get(customer=request.user.id).books.values())
+# class BookOrderList(generics.GenericAPIView):
+#     # renderer_classes = [UserRenderer]
+#     permission_classes=[IsAuthenticated]
+#     def get(self,request):
+#         return Response(BookOrder.objects.get(customer=request.user.id).books.values())
 
 
